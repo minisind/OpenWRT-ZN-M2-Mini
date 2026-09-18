@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       CONFIG:
-        default: 'MEDIATEK'
+        default: 'TEST'
         required: true
         type: choice
         options:
