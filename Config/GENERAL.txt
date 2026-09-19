@@ -3,7 +3,6 @@ CONFIG_PACKAGE_luci-theme-aurora=n
 CONFIG_PACKAGE_luci-theme-bootstrap=y
 CONFIG_ORDERED_THEME_bootstrap=y
 
-
 CONFIG_PACKAGE_dnsmasq-full=y
 CONFIG_PACKAGE_dnsmasq_full_dhcp=y
 CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
