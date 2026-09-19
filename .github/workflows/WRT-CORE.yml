@@ -179,23 +179,15 @@ jobs:
 
           make download -j$(nproc)
 
-#      - name: Compile Firmware
-#        if: env.WRT_TEST != 'true'
-#        run: |
-#          cd ./wrt/
-#
-#          make -j$(nproc) || make -j$(nproc) V=s
-       - name: Compile Firmware
-         if: env.WRT_TEST != 'true'
-         run: |
-           cd ./wrt/
+      - name: Compile Firmware
+        if: env.WRT_TEST != 'true'
+        run: |
+          cd ./wrt/          
+          if ! make -j$(nproc); then
+            echo "⚠️ 第一次多线程编译失败，正在切换至单线程捕获详细错误日志..."
+            make -j1 V=s
+          fi
           
-##          # 第一次尝试：全核心高速编译
-           if ! make -j$(nproc); then
-             echo "⚠️ 第一次多线程编译失败，正在切换至单线程捕获详细错误日志..."
-##            # 第二次尝试：强制单线程编译，并输出最详细的 V=s 日志
-             make -j1 V=s
-           fi
       - name: Machine Information
         run: |
           cd ./wrt/
