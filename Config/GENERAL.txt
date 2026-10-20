@@ -52,6 +52,13 @@ CONFIG_DEVEL=y
 CONFIG_TARGET_MULTI_PROFILE=y
 CONFIG_TARGET_PER_DEVICE_ROOTFS=y
 CONFIG_TARGET_ROOTFS_INITRAMFS=n
+
+# 打印机基础与服务器插件 (p910nd)
+CONFIG_PACKAGE_kmod-usb-printer=y
+CONFIG_PACKAGE_p910nd=y
+CONFIG_PACKAGE_luci-app-p910nd=y
+CONFIG_PACKAGE_luci-i18n-p910nd-zh-cn=y
+
 #内核调整
 CONFIG_PACKAGE_kmod-qca-nss-ecm=y
 CONFIG_NSS_DRV_RMNET_ENABLE=n
@@ -161,13 +168,6 @@ CONFIG_PACKAGE_xz-utils=y
 CONFIG_PACKAGE_zram-swap=y
 
 ##
-
-# 打印机基础与服务器插件 (p910nd)
-CONFIG_PACKAGE_kmod-usb-printer=y
-CONFIG_PACKAGE_p910nd=y
-CONFIG_PACKAGE_luci-app-p910nd=y
-CONFIG_PACKAGE_luci-i18n-p910nd-zh-cn=y
-
 # 内存优化 (kmod-zram & zram-swap)
 CONFIG_PACKAGE_kmod-zram=y
 CONFIG_PACKAGE_zram-swap=y
